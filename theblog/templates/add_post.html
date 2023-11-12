@@ -1,0 +1,23 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add blog Post</h1>
+<br/><br/>
+<div class="mb-3">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button>Post</button>
+    </form>
+</div>
+
+    <script>
+        var name = "{{ user.username }}";
+        document.getElementById("iduser").value
+            = name;
+    </script>
+<br/>
+<a href = "{% url 'home' %}"> Back </a>
+
+{% endblock %}

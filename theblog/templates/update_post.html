@@ -1,0 +1,24 @@
+{%  extends 'base.html' %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+    {% if  user.id ==post.author.id %}
+        <h1>Edit Post</h1>
+        <br/><br/>
+        <div class="mb-3">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Update</button>
+            </form>
+        </div>
+
+        <br/>
+        <a href = "{% url 'home' %}"> Back </a>
+    {% else %}
+    Você não pode editar esse post
+    {% endif %}
+{% endif %}
+
+{% endblock %}

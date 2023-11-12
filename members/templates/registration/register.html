@@ -1,0 +1,12 @@
+<h1>Register</h1>
+<br/><br/>
+<div class="mb-3">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <button>Register</button>
+    </form>
+</div>
+
+<br/>
+<a href = "{% url 'home' %}"> Back </a>
